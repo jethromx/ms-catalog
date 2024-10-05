@@ -28,7 +28,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/${api.version}/v0/articles")
+@RequestMapping("/${api.version}/articles")
 @Tag(name = "Articles", description = "API for managing articles")
 public class ArticleController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
