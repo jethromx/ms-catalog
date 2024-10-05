@@ -1,0 +1,17 @@
+
+services:
+  mysql:
+    container_name: ms-catalog-mysql
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ms-catalog-db
+      - MYSQL_USER=catalog_username
+      - MYSQL_PASSWORD=T3s4cat@log
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
