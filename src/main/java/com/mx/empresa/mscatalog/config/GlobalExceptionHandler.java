@@ -9,6 +9,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.mx.empresa.mscatalog.exceptions.CustomException;
 
@@ -60,6 +62,21 @@ public class GlobalExceptionHandler {
 
    
 
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNotFoundException(NoResourceFoundException ex) {
+        Map<String, String> error = new HashMap<>();
+        
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String s = formatter.format(Calendar.getInstance().getTime());
+        error.put("timestamp", s);
+        error.put("error", ex.getMessage());
+        error.put("errorCode", "000");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+
+    
     
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<Map<String, String>> handleGeneralException(CustomException ex) {
