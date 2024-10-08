@@ -14,7 +14,7 @@ docker-compose up -d
 ```
 <schema>://<url>:<port>/swagger-ui/index.html
 
-https://ms-catalog-39452863489.us-central1.run.app/swagger-ui/index.html
+https://ms-catalog-1097931821346.us-central1.run.app/swagger-ui/index.html
 ```
 
 
@@ -22,7 +22,7 @@ https://ms-catalog-39452863489.us-central1.run.app/swagger-ui/index.html
 
 ```
 <schema>://<url>:<port>/v3/api-docs
-https://ms-catalog-39452863489.us-central1.run.app/v3/api-docs
+https://ms-catalog-1097931821346.us-central1.run.app/v3/api-docs
 
 ```
 
